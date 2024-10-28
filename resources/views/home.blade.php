@@ -90,7 +90,7 @@
                         </li>
                         <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#base">
-                                <i class="fas fa-layer-group"></i>
+                                <i class="fas fa-wallet"></i>
                                 <p>Rekening Pembayaran Retribusi</p>
                                 <span class="caret"></span>
                             </a>
