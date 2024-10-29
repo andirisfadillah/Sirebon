@@ -75,7 +75,7 @@
                             <div class="collapse" id="dashboard">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="../demo1/index.html">
+                                        <a href="/index.html">
                                             <span class="sub-item">Dashboard 1</span>
                                         </a>
                                     </li>
@@ -94,55 +94,7 @@
                                 <p>Rekening Pembayaran Retribusi</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="base">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="components/avatars.html">
-                                            <span class="sub-item">Avatars</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/buttons.html">
-                                            <span class="sub-item">Buttons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/gridsystem.html">
-                                            <span class="sub-item">Grid System</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/panels.html">
-                                            <span class="sub-item">Panels</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/notifications.html">
-                                            <span class="sub-item">Notifications</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/sweetalert.html">
-                                            <span class="sub-item">Sweet Alert</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/font-awesome-icons.html">
-                                            <span class="sub-item">Font Awesome Icons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/simple-line-icons.html">
-                                            <span class="sub-item">Simple Line Icons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/typography.html">
-                                            <span class="sub-item">Typography</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                         
                         </li>
                         <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarLayouts">
@@ -208,7 +160,7 @@
                                 <p>Pembayaran Retribusi</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="maps">
+                             <div class="collapse" id="maps">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="maps/googlemaps.html">
@@ -587,12 +539,7 @@
                                                     <img src="assets/img/profile.jpg" alt="image profile"
                                                         class="avatar-img rounded" />
                                                 </div>
-                                                <div class="u-text">
-                                                    <h4>Hizrian</h4>
-                                                    <p class="text-muted">hello@example.com</p>
-                                                    <a href="profile.html"
-                                                        class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                                </div>
+                                             
                                             </div>
                                         </li>
                                         <li>
@@ -715,45 +662,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card card-primary card-round">
-                                <div class="card-header">
-                                    <div class="card-head-row">
-                                        <div class="card-title">Daily Sales</div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <button class="btn btn-sm btn-label-light dropdown-toggle"
-                                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    Export
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-category">March 25 - April 02</div>
-                                </div>
-                                <div class="card-body pb-0">
-                                    <div class="mb-4 mt-2">
-                                        <h1>$4,578.58</h1>
-                                    </div>
-                                    <div class="pull-in">
-                                        <canvas id="dailySalesChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-round">
-                                <div class="card-body pb-0">
-                                    <div class="h1 fw-bold float-end text-primary">+5%</div>
-                                    <h2 class="mb-2">17</h2>
-                                    <p class="text-muted">Users online</p>
-                                    <div class="pull-in sparkline-fix">
-                                        <div id="lineChart"></div>
-                                    </div>
+                     
                                 </div>
                             </div>
                         </div>
