@@ -11,7 +11,8 @@ class LoginController extends Controller
  public function halamanlogin(){
     return view('Login.Login-aplikasi');
  }
- public function postLogin(Request $request){
+
+ public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
             return redirect('/home');
     }

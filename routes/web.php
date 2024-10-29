@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RetribusiKapalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', function () {
 
 
 route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
-route::post('/postLogin',[LoginController::class,'postLogin'])->name(name: 'postLogin');
+route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 
 Route::group(['middleware' => ['auth','ceklevel:karyawan,admin']], function () {
     Route::get('/home', [HomeController::class,'index'])->name('home');
