@@ -23,7 +23,7 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
-                @if( auth()->user()->level =="karyawan" )
+                @if( auth()->user()->level =="User" )
                 <li class="nav-item active">
                     <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
@@ -209,13 +209,7 @@
                         <span class="badge badge-success">4</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="../../documentation/index.html">
-                        <i class="fas fa-file"></i>
-                        <p>Documentation</p>
-                        <span class="badge badge-secondary">1</span>
-                    </a>
-                </li>
+              
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#submenu">
                         <i class="fas fa-bars"></i>

@@ -34,10 +34,10 @@
                 </li>
                
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" aria-expanded="false" class="collapsed" href="">
+                    <a data-bs-toggle="collapse" href="#base">
                         <i class="fa fa-wallet"></i>
                         <p>Rekening Pembayaran Retribusi</p>
-
+                        <span class="caret"></span>
                     </a>
                  
                 </li>
