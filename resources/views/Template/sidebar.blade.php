@@ -40,14 +40,14 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('kategori-retribusi.index') }}">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                       <p>Kategori Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('wajib-retribusi.index') }}">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-user-times" aria-hidden="true"></i>
                       <p>Wajib Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
@@ -61,14 +61,14 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('pembayaran.index') }}">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-address-card" aria-hidden="true"></i>
                       <p>Pembayaran Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('laporan.index') }}">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fas fa-star"></i>
                       <p>Laporan</p>
                       <span class="badge badge-success">4</span>
                     </a>

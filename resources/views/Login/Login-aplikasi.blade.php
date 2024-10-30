@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{{ asset('StyleLogin/css/style.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -31,12 +34,18 @@
                         <h3 class="text-center mb-4">Have an account?</h3>
                         <form action="{{ route('postlogin') }}" method="post">
                             @csrf
-                            <div class="form-group">
-                                <input type="email" class="form-control rounded-left" placeholder="Email" name="email" required>
+                            <div class="form-outline mb-4">
+                                <div style="position: relative;" size="30">
+                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
+                                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Masukkan email" size="30" style="padding-left: 30px; height: 40px;" />
+                                </div>
                             </div>
-                            <div class="form-group d-flex">
-                                <input type="password" class="form-control rounded-left" name="password" placeholder="Password"
-                                    required>
+                            
+                            <div class="form-outline mb-4">
+                                <div style="position: relative;" size="30">
+                                    <i class="fa fa-lock" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
+                                    <input type="password" name="password" class="form-control form-control-lg" placeholder="Masukkan password" size="30" style="padding-left: 30px; height: 40px;" />
+                                </div>
                             </div>
                             <div class="form-group d-md-flex">
                                 <div class="w-50">
@@ -58,11 +67,24 @@
             </div>
         </div>
     </section>
+    @if (session('error'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Swal.fire({
+                    title: 'Login Gagal!',
+                    text: "{{ session('error') }}",
+                    icon: 'error',
+                    confirmButtonText: 'Coba Lagi'
+                });
+            });
+        </script>
+    @endif
 
     <script src="{{ asset('Login/js/jquery.min.js') }}"></script>
     <script src="{{ asset('Login/js/popper.js') }}"></script>
     <script src="{{ asset('Login/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('Login/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
