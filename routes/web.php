@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\WajibController;
 use App\Http\Controllers\Admin\KapalWajibController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\PembayaranController;
+use App\Http\Controllers\Admin\LaporanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -35,4 +36,5 @@ Route::group(['middleware' => ['auth', 'ceklevel:karyawan,admin']], function () 
     Route::resource('wajib-retribusi', WajibController::class);
     Route::resource('kapal', KapalWajibController::class);
     Route::resource('pembayaran', PembayaranController::class);
+    Route::resource('laporan', LaporanController::class);
 });

@@ -67,7 +67,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('rekening.index') }}">
+                    <a href="{{ route('laporan.index') }}">
                       <i class="fas fa-desktop"></i>
                       <p>Laporan</p>
                       <span class="badge badge-success">4</span>
