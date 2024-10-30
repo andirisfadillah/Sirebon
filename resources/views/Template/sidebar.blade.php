@@ -74,7 +74,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('rekening.index') }}">
+                    <a href="{{ route('logout') }}">
                       <i class="fas fa-desktop"></i>
                       <p>Logout</p>
                       <span class="badge badge-success">4</span>
@@ -84,7 +84,7 @@
 
                 {{-- batas admin --}}
 
-                @if( auth()->user()->level =="retribusi" )
+                @if( auth()->user()->level =="wajib" )
                 <li class="nav-item">
                     <a href="widgets.html">
                       <i class="fas fa-desktop"></i>
@@ -128,7 +128,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="widgets.html">
+                    <a href="logout">
                       <i class="fas fa-desktop"></i>
                       <p>Logout</p>
                       <span class="badge badge-success">4</span>
