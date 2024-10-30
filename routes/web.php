@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\RekeningController;
+use App\Http\Controllers\Admin\WajibController;
+use App\Http\Controllers\Admin\KapalWajibController;
+use App\Http\Controllers\Admin\KategoriController;
+use App\Http\Controllers\Admin\PembayaranController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RetribusiKapalController;
-use App\Http\Controllers\ProfilController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\KapalkuController;
-use App\Http\Controllers\KapalWajibRetribusiController;
-use App\Http\Controllers\KonfirmasiPembayaranRetribusiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +30,9 @@ route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 
 Route::group(['middleware' => ['auth', 'ceklevel:karyawan,admin']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/profil', [ProfilController::class, 'profil'])->name('profil');
-    Route::get('/kategori', [KategoriController::class, 'kategori'])->name('kategori');
-    Route::get('/kapalku', [KapalkuController::class, 'kapalku'])->name('kapalku');
-    Route::get('/kapalwajibretribusi', [KapalWajibRetribusiController::class, 'kapalwajibretribusi'])->name('kapalwajibretribusi');
-    Route::get('/konfirmasipembayaranretribusi', [KonfirmasiPembayaranRetribusiController::class, 'konfirmasipembayaranretribusi'])->name('kapalwajibretribusi');
+    Route::resource('rekening', RekeningController::class);
+    Route::resource('kategori-retribusi', KategoriController::class);
+    Route::resource('wajib-retribusi', WajibController::class);
+    Route::resource('kapal', KapalWajibController::class);
+    Route::resource('pembayaran', PembayaranController::class);
 });
