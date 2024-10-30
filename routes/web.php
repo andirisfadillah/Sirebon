@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\LaporanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WajibRetribusi\WajibRetribusiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 
-Route::group(['middleware' => ['auth', 'ceklevel:karyawan,admin']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('rekening', RekeningController::class);
     Route::resource('kategori-retribusi', KategoriController::class);
@@ -38,3 +39,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:karyawan,admin']], function () 
     Route::resource('pembayaran', PembayaranController::class);
     Route::resource('laporan', LaporanController::class);
 });
+
+// Route::group(['middleware' => ['auth','ceklevel:retribusi']], function () {
+//     Route::get('/profil', [WajibRetribusiController::class, 'index'])->name('profil');
+// });

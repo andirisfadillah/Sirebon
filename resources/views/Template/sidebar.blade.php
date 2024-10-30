@@ -84,7 +84,7 @@
 
                 {{-- batas admin --}}
 
-                @if( auth()->user()->level =="user" )
+                @if( auth()->user()->level =="retribusi" )
                 <li class="nav-item">
                     <a href="widgets.html">
                       <i class="fas fa-desktop"></i>
