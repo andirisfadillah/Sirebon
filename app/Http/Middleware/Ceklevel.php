@@ -14,10 +14,11 @@ class Ceklevel
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle($request, Closure $next, ...$levels)
-    {
-         if(in_array($request->user()->level,$levels)){
-            return $next($request);
-        }
-        return redirect('/');
+{
+    if (auth()->check() && in_array($request->user()->level, $levels)) {
+        return $next($request);
     }
+    return redirect('/login')->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+}
+
 }

@@ -81,67 +81,6 @@
                             </div>
                         </div>
                     </div>
-                        <div class="col-md-4">
-                            <div class="card card-round">
-                                <div class="card-body">
-                                    <div class="card-head-row card-tools-still-right">
-                                        <div class="card-title">New Customers</div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <button class="btn btn-icon btn-clean me-0" type="button"
-                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-h"></i>
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-list py-4">
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <img src="assets/img/jm_denis.jpg" alt="..."
-                                                    class="avatar-img rounded-circle" />
-                                            </div>
-                                           
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card card-round">
-                                <div class="card-header">
-                                    <div class="card-head-row card-tools-still-right">
-                                        <div class="card-title">Transaction History</div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <button class="btn btn-icon btn-clean me-0" type="button"
-                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-h"></i>
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
