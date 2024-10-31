@@ -14,7 +14,7 @@
         @include('Template.navbar')
                 <!-- End Navbar -->
             
-
+                @if( auth()->user()->level =="admin" )
             <div class="container">
                 <div class="page-inner">
                     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
@@ -335,7 +335,7 @@
                     </div>
                 </div>
             </div>
-
+            @endif
             @include('Template.footer')
         </div>
 

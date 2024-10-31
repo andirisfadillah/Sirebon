@@ -86,7 +86,7 @@
 
                 @if( auth()->user()->level =="wajib" )
                 <li class="nav-item">
-                    <a href="widgets.html">
+                  <a href="{{ route('profil.index') }}">
                       <i class="fas fa-user"></i>
                       <p>Profil</p>
                       <span class="badge badge-success">4</span>
