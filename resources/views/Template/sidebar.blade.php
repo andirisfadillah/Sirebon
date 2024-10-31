@@ -40,14 +40,14 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('kategori-retribusi.index') }}">
-                      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                      <i class="fas fa-exclamation"></i>
                       <p>Kategori Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('wajib-retribusi.index') }}">
-                      <i class="fa fa-user-times" aria-hidden="true"></i>
+                      <i class="fa fa-users" aria-hidden="true"></i>
                       <p>Wajib Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
@@ -75,7 +75,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('logout') }}">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                       <p>Logout</p>
                       <span class="badge badge-success">4</span>
                     </a>
@@ -87,49 +87,49 @@
                 @if( auth()->user()->level =="wajib" )
                 <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fas fa-user"></i>
                       <p>Profil</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                 <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fas fa-exclamation"></i>
                       <p>Kategori Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fas fa-ship"></i>
                       <p>Kapalku</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-users" aria-hidden="true"></i>
                       <p>Kapal Wajib Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
-                      <p>Konfirmasi Pembayaran Retribusi</p>
+                      <i class="fa fa-address-card" aria-hidden="true"></i>
+                      <p>Konfirmasi Pembayaran</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="widgets.html">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fas fa-star"></i>
                       <p>Laporan</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="logout">
-                      <i class="fas fa-desktop"></i>
+                      <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                       <p>Logout</p>
                       <span class="badge badge-success">4</span>
                     </a>
