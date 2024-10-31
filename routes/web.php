@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WajibRetribusi\WajibRetribusiController;
+use App\Http\Controllers\WajibRetribusi\KategoriRetribusiController;
+use App\Http\Controllers\WajibRetribusi\KapalkuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +43,13 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::resource('pembayaran', PembayaranController::class);
     Route::resource('laporan', LaporanController::class);
     Route::resource('profil', ProfilController::class);
+    Route::resource('kategori', KategoriRetribusiController::class);
+    Route::resource('kapalku', KapalkuController::class);
+    Route::get('/ganti-password', [ProfilController::class, 'changePasswordForm'])->name('ganti-password-form');
+    Route::post('/ganti-password', [ProfilController::class, 'changePassword'])->name('ganti-password');
 });
 
-//  Route::group(['middleware' => ['auth','ceklevel:retribusi']], function () {
-//     Route::get('/profil', [WajibRetribusiController::class, 'index'])->name('profil');
-// });
+ Route::group(['middleware' => ['auth','ceklevel:retribusi']], function () {
+
+
+ });

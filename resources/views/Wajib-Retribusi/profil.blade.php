@@ -6,86 +6,47 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
         <!-- Sidebar -->
+        
         @include('Template.sidebar')
         <!-- End Sidebar -->
 
         @include('Template.navbar')
                 <!-- End Navbar -->
+                <div class="container mt-5">
+                    <h2>Ganti Password</h2>
             
-            <div class="container">
-                <div class="page-inner">
-                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
-                        <div class="ms-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
+                    <form action="{{ route('ganti-password') }}" method="POST">
+                        @csrf
+                        @if (session('status'))
+                        <div class="alert alert-success"> {{ session('status') }} </div>
+            
+                        @elseif (session('error'))
+                        <div class="alert alert-danger"> {{ session('error') }} </div>
+                        @endif
+                        <div class="form-group">
+                            <label>Password Lama</label>
+                            <input type="password" name="current_password" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col col-stats ms-3 ms-sm-0">
-                                            <div class="numbers">
-                                                <p class="card-category">Jumlah Sudah Bayar</p>
-                                                <h4 class="card-title">1,294</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            
+                        <div class="form-group">
+                            <label>Password Baru</label>
+                            <input type="password" name="new_password" class="form-control" required>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-info bubble-shadow-small">
-                                                <i class="fas fa-user-check"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col col-stats ms-3 ms-sm-0">
-                                            <div class="numbers">
-                                                <p class="card-category">Jumlah Belum Bayar</p>
-                                                <h4 class="card-title">1303</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            
+                        <div class="form-group">
+                            <label>Konfirmasi Password Baru</label>
+                            <input type="password" name="new_password_confirmation" class="form-control" required>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-success bubble-shadow-small">
-                                                <i class="fas fa-luggage-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col col-stats ms-3 ms-sm-0">
-                                            <div class="numbers">
-                                                <p class="card-category">Jumlah Pemasukan</p>
-                                                <h4 class="card-title">$ 1,345</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Ganti Password</button>
+                    </form>
                 </div>
-            </div>
-
+            
             @include('Template.footer')
         </div>
-       
+        
         <!-- Custom template | don't include it in your project! -->
         <div class="custom-template">
             <div class="title">Settings</div>
@@ -112,6 +73,7 @@
                             <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
                         </div>
                     </div>
+                    
                     <div class="switch-block">
                         <h4>Navbar Header</h4>
                         <div class="btnSwitch">
@@ -147,8 +109,7 @@
                 <i class="icon-settings"></i>
             </div>
         </div>
-        <!-- End Custom template -->
-    </div>
+        
     <!--   Core JS Files   -->
     @include('Template.script')
    

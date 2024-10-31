@@ -93,14 +93,14 @@
                     </a>
                   </li>
                 <li class="nav-item">
-                    <a href="widgets.html">
+                  <a href="{{ route('kategori.index') }}">
                       <i class="fas fa-exclamation"></i>
                       <p>Kategori Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="widgets.html">
+                    <a href="kapalku.index">
                       <i class="fas fa-ship"></i>
                       <p>Kapalku</p>
                       <span class="badge badge-success">4</span>
