@@ -15,8 +15,10 @@
 
         @include('Template.navbar')
                 <!-- End Navbar -->
+                <!--Content Row -->
+                <h2>Ganti Password</h2>
                 <div class="container mt-5">
-                    <h2>Ganti Password</h2>
+                    
             
                     <form action="{{ route('ganti-password') }}" method="POST">
                         @csrf
