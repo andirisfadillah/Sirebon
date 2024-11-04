@@ -13,6 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WajibRetribusi\WajibRetribusiController;
 use App\Http\Controllers\WajibRetribusi\KategoriRetribusiController;
 use App\Http\Controllers\WajibRetribusi\KapalkuController;
+use App\Http\Controllers\WajibRetribusi\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::post('/ganti-password', [ProfilController::class, 'changePassword'])->name('ganti-password');
 });
 
- Route::group(['middleware' => ['auth','ceklevel:retribusi']], function () {
+ Route::group(['middleware' => ['auth','ceklevel:wajib-retribusi']], routes: function () {
+    Route::get('/prf', [ProfileController::class, 'profile'])->name('profile');
 
 
  });

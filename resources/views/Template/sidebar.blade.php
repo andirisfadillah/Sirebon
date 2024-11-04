@@ -84,7 +84,7 @@
 
                 {{-- batas admin --}}
 
-                @if( auth()->user()->level =="wajib" )
+                @if( auth()->user()->level =="wajib-retribusi" )
                 <li class="nav-item">
                   <a href="{{ route('profil.index') }}">
                       <i class="fas fa-user"></i>

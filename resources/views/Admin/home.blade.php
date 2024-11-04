@@ -4,7 +4,6 @@
 <head>
     @include('Template.head')
 </head>
-
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
@@ -12,8 +11,7 @@
         <!-- End Sidebar -->
 
         @include('Template.navbar')
-                <!-- End Navbar -->
-            
+                <!-- End Navbar -->  
             <div class="container">
                 <div class="page-inner">
                     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
@@ -151,7 +149,5 @@
     </div>
     <!--   Core JS Files   -->
     @include('Template.script')
-   
 </body>
-
 </html>

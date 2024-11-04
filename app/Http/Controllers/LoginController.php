@@ -17,7 +17,12 @@ class LoginController extends Controller
     public function postlogin(Request $request)
     {
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/home');
+
+            if(auth()->user()->level == 'admin'){
+                return redirect('/home');
+            }else{
+                return redirect('/prf');
+            }
         }
         return redirect('/login')->with('error', 'Username atau password salah!');
     }
