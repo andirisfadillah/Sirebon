@@ -100,7 +100,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="kapalku.index">
+                    <a href="{{route('wajib-retribusi.index')}}">
                       <i class="fas fa-ship"></i>
                       <p>Kapalku</p>
                       <span class="badge badge-success">4</span>
