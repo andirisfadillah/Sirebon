@@ -84,7 +84,7 @@
 
                 {{-- batas admin --}}
 
-                @if( auth()->user()->level =="wajib-retribusi" )
+                @if( auth()->user()->level =="wajib" )
                 <li class="nav-item">
                   <a href="{{ route('profil.index') }}">
                       <i class="fas fa-user"></i>
@@ -107,14 +107,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="widgets.html">
+                    <a href="{{ route('kapal.index') }}">
                       <i class="fa fa-users" aria-hidden="true"></i>
                       <p>Kapal Wajib Retribusi</p>
                       <span class="badge badge-success">4</span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="widgets.html">
+                    <a href="{{ route('konfirmasi.index') }}">
                       <i class="fa fa-address-card" aria-hidden="true"></i>
                       <p>Konfirmasi Pembayaran</p>
                       <span class="badge badge-success">4</span>
