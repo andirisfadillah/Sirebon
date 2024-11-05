@@ -17,7 +17,7 @@
         </nav>
         <div class="copyright">
             2024,  <i class="fa fa-heart heart text-danger"></i> by
-            <a href="http://www.themekita.com">ThemeKita</a>
+            <a href="http://www.themekita.com">Dinas Komunikasi</a>
         </div>
         <div>
             Distributed by
