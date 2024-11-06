@@ -52,8 +52,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::post('/ganti-password', [ProfilController::class, 'changePassword'])->name('ganti-password');
 });
 
- Route::group(['middleware' => ['auth','ceklevel:wajib']], routes: function () {
+Route::group(['middleware' => ['auth', 'ceklevel:wajib']], routes: function () {
     Route::get('/prf', [ProfileController::class, 'profile'])->name('profile');
-
-
- });
+});

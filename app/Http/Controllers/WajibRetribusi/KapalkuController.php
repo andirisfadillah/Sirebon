@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WajibRetribusi;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kapalku;
 use Illuminate\Http\Request;
 
 class KapalkuController extends Controller
@@ -12,7 +13,8 @@ class KapalkuController extends Controller
      */
     public function index()
     {
-        return view('Wajib-Retribusi.kapalku');
+        $kapalku = Kapalku::get();
+        return view('Wajib-Retribusi.kapalku', compact('kapalku'));
     }
 
     /**
@@ -20,7 +22,7 @@ class KapalkuController extends Controller
      */
     public function create()
     {
-        //
+        return view('Wajib-Retribusi.kapalku-retribusi.create');
     }
 
     /**
@@ -28,7 +30,19 @@ class KapalkuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_lengkap' => 'required|string|max:255',
+            'telepon' => 'required|string|max:255',
+            'nik' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'kelurahan' => 'required|string|max:255',
+        ]);
+
+        Kapalku::create(
+            $request->all()
+        );
+
+        return redirect()->route('wajib-retribusi.index');
     }
 
     /**
@@ -44,7 +58,9 @@ class KapalkuController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kategori = Kapalku::find($id);
+
+        return view('Wajib-Retribusi.kapalku.edit', compact('kapalku'));
     }
 
     /**
@@ -52,7 +68,17 @@ class KapalkuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kapalku = Kapalku::find($id);
+        // dd($kapalku);
+
+        $request->validate([
+            'nama' => 'required|string|max:255'
+        ]);
+
+        $kapalku->nama = $request->nama;
+        $kapalku->save();
+
+        return redirect()->route('Wajib-Retribusi.kapalku-retribusi.index');
     }
 
     /**
@@ -60,6 +86,9 @@ class KapalkuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kapalku = Kapalku::find($id);
+
+        $kapalku->delete();
+        return redirect()->route('Wajib-Retribusi.index');
     }
 }
