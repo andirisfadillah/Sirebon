@@ -62,5 +62,3 @@
                                                 <i class="fas fa-users"></i>
                                             </div>
                                         </div>
-
-</html>

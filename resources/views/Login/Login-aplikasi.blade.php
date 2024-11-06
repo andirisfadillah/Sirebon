@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">LOGIN SIREPAL</h2>
+                    <h2 class="heading-section"></h2>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -31,7 +31,7 @@
                         <div class="icon d-flex align-items-center justify-content-center">
                             <img src="StyleLogin/images/jangkar.png" width="80" height="80" class=""></img>
                         </div>
-                        <h3 class="text-center mb-4">Have an account?</h3>
+                        <h3 class="text-center mb-4">SIREBON</h3>
                         <form action="{{ route('postlogin') }}" method="post">
                             @csrf
                             <div class="form-outline mb-4">
@@ -86,6 +86,6 @@
     <script src="{{ asset('Login/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-</body>
+</body>+
 
 </html>

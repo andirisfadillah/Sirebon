@@ -27,17 +27,20 @@
                     <table class="table table-bordered mt-3">
                         <thead class="table-light">
                             <tr>
-                            <th style="width: 50px;">No.</th>
-                              <th>kategori retribusi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>kategori retribusi 1</td>
-                            </tr>
-                            <!-- Repeat rows as needed -->
-                        </tbody>
+                                <form action="{{ route('kapalku.store') }}" method="post">
+                                    @csrf
+                                    <label for="nama">Nama lengkap</label>
+                                    <input type="text" name="nama_lengkap">
+                                    <label for="nama">Telepon</label>
+                                    <input type="text" name="telepon">
+                                    <label for="nama">Nik</label>
+                                    <input type="text" name="nik">
+                                    <label for="nama">Alamat</label>
+                                    <input type="text" name="alamat">
+                                    <label for="nama">Kelurahan</label>
+                                    <input type="text" name="kelurahan">
+                                    <button type="submit">Simpan data</button>
+                                </form>
                     </table>
                 </div>
 </html>
