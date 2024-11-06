@@ -6,13 +6,16 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <!-- Sidebar -->
+
         @include('Template.sidebar')
         <!-- End Sidebar -->
 
         @include('Template.navbar')
         <!-- End Navbar -->
+        <!--Content Row -->
         <div class="table-container">
             <div class="d-flex justify-content-between align-items-center">
                 <button class="btn btn-primary btn-add">Tambah Data</button>
@@ -29,5 +32,17 @@
                 <button type="submit">Simpan data</button>
             </form>
         </div>
+
+        @include('Template.footer')
+    </div>
+
+    <!-- Custom template | don't include it in your project! -->
+
+
+
+    <!--   Core JS Files   -->
+    @include('Template.script')
+
+</body>
 
 </html>

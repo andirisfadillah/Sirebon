@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <table class="table table-bordered mt-5">
+            <table class="table table-bordered mt-4">
                 <thead class="table-light">
                     <tr>
                         <th style="width: 50px;">No.</th>
