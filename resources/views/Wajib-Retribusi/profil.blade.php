@@ -13,77 +13,103 @@
         <!-- End Sidebar -->
 
         <!-- Content Row -->
-        <div class="row">
-            <div>
-                <div class="form-container">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" value="text">
-                            </div>
-                            <div class="form-group col-md-6"> <!-- Mengoreksi "clas" menjadi "class" -->
-                                <label for="hakAkses">Hak Akses</label>
-                                <input type="text" class="form-control" id="hakAkses" value="Administrator">
-                            </div>
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="nik">NIK</label>
-                                <input type="text" class="form-control" id="nik" value="3674938217278893">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="namaLengkap">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="namaLengkap" value="namaku">
-                            </div>
+                <div class="col">
+                    <div class="card profile-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Profil</h5>
+                            <hr>
+                            <form>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="sdadas" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Hak Akses</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="Administrator" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">NIK</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="3424234324" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Nama Lengkap</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="Faizi Rahman" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Telepon</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="099076756" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Alamat</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="Kalijaga" readonly>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                            </form>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="telepon">Telepon</label>
-                                <input type="text" class="form-control" id="telepon" value="081234567890">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="alamat">Alamat</label>
-                                <input type="text" class="form-control" id="alamat" value="Ds. cikaso">
-                            </div>
-                            <button type="submit" name="save" class="btn btn-primary mt-1">Simpan</button>
-                        </div>
+                    </div>
+                </div>
                     </form> <!-- Menutup tag <form> -->
                 </div>
             </div>
 
-            <h2>Ganti Password</h2>
             <div class="container mt-5">
+                <h2>Ganti Password</h2>
                 <form action="{{ route('ganti-password') }}" method="POST">
                     @csrf
+        
+                    <!-- Display success or error messages -->
                     @if (session('status'))
-                    <div class="alert alert-success">{{ session('status') }}</div>
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
                     @elseif (session('error'))
-                    <div class="alert alert-danger">{{ session('error') }}</div>
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
                     @endif
-
-                    <div class="form-group">
-                        <label>Password Lama</label>
-                        <input type="password" name="current_password" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Password Baru</label>
-                        <input type="password" name="new_password" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Konfirmasi Password Baru</label>
-                        <input type="password" name="new_password_confirmation" class="form-control" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mt-3">Ganti Password</button>
+        
+                    <!-- Table Layout -->
+                    <table class="table">
+                        <tr>
+                            <td><label for="current_password">Password Lama</label></td>
+                            <td>
+                                <input type="password" id="current_password" name="current_password" class="form-control" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="new_password">Password Baru</label></td>
+                            <td>
+                                <input type="password" id="new_password" name="new_password" class="form-control" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="new_password_confirmation">Konfirmasi Password Baru</label></td>
+                            <td>
+                                <input type="password" id="new_password_confirmation" name="new_password_confirmation" class="form-control" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit" class="btn btn-primary mt-3">Ganti Password</button>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
-            </div>    
-        </div>
-    </div>
-</body>
-
-</html>
+            </div>
+        </body>
+        </html>
