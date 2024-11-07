@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Kapalku;
 
 class WajibController extends Controller
 {
@@ -12,7 +13,8 @@ class WajibController extends Controller
      */
     public function index()
     {
-        return view('Admin.wajib-retribusi');
+        $kapalku = Kapalku::all();
+        return view('Admin.wajib-retribusi', compact('kapalku'));
     }
 
     /**
