@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RetributionCategory extends Model
+class kapalku extends Model
 {
     use HasFactory;
-
+    protected $table= 'kapalku';
     protected $fillable= [
-      'nama',  
+      'nama_lengkap',  
+      'telepon',  
+      'nik',  
+      'alamat',  
+      'kelurahan',  
     ];
 }

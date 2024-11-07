@@ -3,7 +3,7 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a href="index.html" class="logo">
-                <img src="assets/img/examples/sirebon.png" alt="navbar brand" class="navbar-brand mt-3"
+                <img src="{{ asset('assets/img/examples/sirebon.png')}}" alt="navbar brand" class="navbar-brand mt-3"
                     width="180" />
             </a>
             <div class="nav-toggle">

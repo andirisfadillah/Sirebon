@@ -34,7 +34,9 @@
                                 <th>nik</th>
                                 <th>alamat</th>
                                 <th>kelurahan</th>
+                                @if (auth()->user()->level == "admin")
                                 <th style="width: 150px;">Aksi</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -45,10 +47,12 @@
                                 <td>1234567890</td>
                                 <td>ngawi</td>
                                 <td>pancalang</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm">Ubah</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                @if (auth()->user()->level == "admin")
+                                <td scope="col" class="text-center">
+                                  <a href="" class="btn btn-primary btn-sm m-1">Ubah</a>
+                                  <a href="" class="btn btn-danger btn-sm m-1">Hapus</a>
                                 </td>
+                                @endif
                             </tr>
                             <!-- Repeat rows as needed -->
                         </tbody>

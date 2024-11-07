@@ -56,7 +56,7 @@
                 </div>
 
                         <div class="ms-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
+                            <a href="{{route('kapalku.create')}}" class="btn btn-primary btn-round">Tambah Data</a>
                         </div>
                     </div>
                     <div class="row">
