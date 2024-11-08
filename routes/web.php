@@ -15,7 +15,8 @@ use App\Http\Controllers\WajibRetribusi\KategoriRetribusiController;
 use App\Http\Controllers\WajibRetribusi\KapalkuController;
 use App\Http\Controllers\WajibRetribusi\ProfileController;
 use App\Http\Controllers\WajibRetribusi\KonfirmasiPembayaranController;
-
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RetribusiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +43,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::resource('kategori-retribusi', KategoriController::class);
     Route::resource('wajib-retribusi', WajibController::class);
     Route::resource('kapal', KapalWajibController::class);
-    Route::resource('pembayaran', PembayaranController::class);
     Route::resource('konfirmasi', KonfirmasiPembayaranController::class);
     Route::resource('laporan', LaporanController::class);
     Route::resource('profil', ProfilController::class);
@@ -55,3 +55,9 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
 Route::group(['middleware' => ['auth', 'ceklevel:wajib']], routes: function () {
     Route::get('/prf', [ProfileController::class, 'profile'])->name('profile');
 });
+
+Route::get('/retribusi', action: [RetribusiController::class, 'index'])->name('retribusi.index');
+Route::post('/pembayaran', action: [pembayaranController::class, 'store'])->name('pembayaran.store');
+Route::get('/pembayaran/history', [pembayaranController::class, 'history'])->name('pembayaran.history')->middleware('auth');
+
+

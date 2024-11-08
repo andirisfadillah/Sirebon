@@ -36,34 +36,69 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($rekening as $index => $data)
                             <tr>
-                                <td>1</td>
-                                <td>Bank BNI</td>
-                                <td>Nama Pemilik</td>
-                                <td>1234567890</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm">Ubah</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
-                            </tr>
+                                <td scope="col" class="text-center">{{ $index + 1 }}</td>
+                                <td scope="col" class="text-center">
+                                    {{ $data->refBank->nama_bank }}</td>
+                                    <td scope="col" class="text-center">{{ $data->nama_akun }}</td>
+                                    <td scope="col" class="text-center">{{ $data->no_rekening }}</td>
+                                    <td scope="col" class="text-center">
+                                        <a href="{{ route('rekening.edit', $data->id) }}"
+                                            class="btn btn-primary btn-sm m-1">Ubah</a>
+
+                                            <form action="{{ route('rekening.destroy', $data->id) }}"
+                                                method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm m-1"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                               
                             <!-- Repeat rows as needed -->
                         </tbody>
                     </table>
                 </div>
-
-                        <div class="ms-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>2024 &copy; SiRebon. Dinas Komunikasi, Informatika & Statistik.</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                        </div>
-
+                </footer>
+                <!-- End of Footer -->
+    
+            </div>
+            <!-- End of Content Wrapper -->
+    
+        </div>
+        <!-- End of Page Wrapper -->
+    
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Anda Yakin?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Klik "Logout" Jika Anda Yakin Ingin Keluar</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="{{ route ('logout') }}">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </html>
