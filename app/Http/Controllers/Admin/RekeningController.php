@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\MsRekening;
 use Illuminate\Http\Request;
 
 class RekeningController extends Controller
@@ -12,6 +13,7 @@ class RekeningController extends Controller
      */
     public function index()
     {
+        $rekening = MsRekening::all();
         return view('Admin.rekening');
     }
 
