@@ -1,20 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Kapalku;
 
-class WajibController extends Controller
+class PembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $kapalku = Kapalku::all();
-        return view('Admin.wajib-retribusi', compact('kapalku'));
+    
     }
 
     /**
@@ -22,7 +19,7 @@ class WajibController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -30,9 +27,9 @@ class WajibController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
-
+    
     /**
      * Display the specified resource.
      */

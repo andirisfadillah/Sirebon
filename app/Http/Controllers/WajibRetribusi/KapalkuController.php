@@ -13,6 +13,7 @@ class KapalkuController extends Controller
      */
     public function index()
     {
+        
         $kapalku = Kapalku::get();
         return view('Wajib-Retribusi.kapalku', compact('kapalku'));
     }
@@ -58,9 +59,9 @@ class KapalkuController extends Controller
      */
     public function edit(string $id)
     {
-        $kategori = Kapalku::find($id);
+        $kapalku = Kapalku::find($id);
 
-        return view('Wajib-Retribusi.kapalku.edit', compact('kapalku'));
+        return view('Wajib-Retribusi.kapalku-retribusi.edit', compact('kapalku'));
     }
 
     /**
@@ -68,15 +69,23 @@ class KapalkuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $kapalku = Kapalku::find($id);
+        
         // dd($kapalku);
 
         $request->validate([
-            'nama' => 'required|string|max:255'
+            'nama_lengkap' => 'required|string|max:255',
+            'telepon' => 'required|string|max:255',
+            'nik' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'kelurahan' => 'required|string|max:255',
         ]);
-
-        $kapalku->nama = $request->nama;
-        $kapalku->save();
+        Kapalku::findOrFail($id)->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'telepon' => $request->telepon,
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'kelurahan' => $request->id_kelurahan
+        ]);
 
         return redirect()->route('Wajib-Retribusi.kapalku-retribusi.index');
     }
@@ -86,9 +95,9 @@ class KapalkuController extends Controller
      */
     public function destroy(string $id)
     {
-        $kapalku = Kapalku::find($id);
+        $kapalku = Kapalku::findOrFail($id);
 
         $kapalku->delete();
-        return redirect()->route('Wajib-Retribusi.index');
+        return redirect()->route('wajib-retribusi.index');
     }
 }
