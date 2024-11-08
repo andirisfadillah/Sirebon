@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\MsRekening;
+use App\Models\RefBank;
 use Illuminate\Http\Request;
 
 class RekeningController extends Controller
@@ -14,7 +15,7 @@ class RekeningController extends Controller
     public function index()
     {
         $rekening = MsRekening::all();
-        return view('Admin.rekening');
+        return view('Admin.pembayaran', compact('rekening'));
     }
 
     /**
@@ -22,7 +23,8 @@ class RekeningController extends Controller
      */
     public function create()
     {
-        //
+        $refBanks = RefBank::all();
+        return view('Admin.pembayaran.create', compact('refBanks'));
     }
 
     /**
@@ -30,7 +32,15 @@ class RekeningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_refBank' => 'required|exists:ref_bank,id',
+            'nama_akun' => 'required|string:max:50',
+            'no_rekening' => 'required|string:max:50',
+        ]);
+
+        MsRekening::create($request->all());
+
+        return redirect()->route('rekening.index')->with('succes', 'Data rekening berhasil ditambahkan.');
     }
 
     /**
