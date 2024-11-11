@@ -1,13 +1,10 @@
-<div>
-    <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
+<div><!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
 </div>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     @include('Template.head')
 </head>
-
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
