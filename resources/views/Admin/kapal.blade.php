@@ -1,19 +1,15 @@
-<div>
+
     <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
-</div>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     @include('Template.head')
 </head>
-
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
         @include('Template.sidebar')
         <!-- End Sidebar -->
-
         @include('Template.navbar')
                 <!-- End Navbar -->
                 <div class="table-container">
@@ -24,7 +20,6 @@
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
                     </div>
-
                     <table class="table table-bordered mt-3">
                         <thead class="table-light">
                             <tr>
@@ -58,7 +53,6 @@
                         </tbody>
                     </table>
                 </div>
-
                         <div class="ms-md-auto py-2 py-md-0">
                             <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
                         </div>
