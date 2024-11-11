@@ -15,55 +15,61 @@
         <!-- End Sidebar -->
 
         @include('Template.navbar')
-                <!-- End Navbar -->
-                <div class="table-container">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-primary btn-add">Tambah Data</button>
-                        <div class="input-group" style="width: 200px;">
-                            <span class="input-group-text">Search:</span>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </div>
-
-                    <table class="table table-bordered mt-3">
-                        <thead class="table-light">
-                            <tr>
-                            <th style="width: 50px;">No.</th>
-                                <th>Jenis Bank</th>
-                                <th>Nama Pemilik</th>
-                                <th>Nomor Rekening</th>
-                                <th style="width: 150px;">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Bank BNI</td>
-                                <td>Nama Pemilik</td>
-                                <td>1234567890</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm">Ubah</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
-                            </tr>
-                            <!-- Repeat rows as needed -->
-                        </tbody>
-                    </table>
+        <!-- End Navbar -->
+        <div class="table-container">
+            <div class="d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-add">Tambah Data</button>
+                <div class="input-group" style="width: 200px;">
+                    <span class="input-group-text">Search:</span>
+                    <input type="text" class="form-control" placeholder="Search">
                 </div>
+            </div>
 
-                        <div class="ms-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
+            <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 50px;">No.</th>
+                        <th>Nama Bank</th>
+                        <th>Nama Pemilik</th>
+                        <th>Nomor Rekening</th>
+                        <th style="width: 150px;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($rekening as $index => $data)
+                    <tr>
+                        <td scope="col" class="text-center">{{ $index + 1 }}</td>
+                        <td scope="col" class="text-center">{{ $data->refBank->nama_bank }}</td>
+                        <td scope="col" class="text-center">{{ $data->nama_akun }}</td>
+                        <td scope="col" class="text-center">{{ $data->no_rekening }}</td>
+                        <td scope="col" class="text-center">
+                            <a href="{{ route('rekening.edit', $data->id) }}" class="btn btn-primary btn-sm m-1">Ubah</a>
+        
+                            <form id="deleteForm{{ $data->id }}" action="{{ route('rekening.destroy', $data->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ms-md-auto py-2 py-md-0">
+            <a href="{{ route('rekening.create') }}" class="btn btn-primary btn-round">Tambah Data</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                <i class="fas fa-users"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                        </div>
 
 </html>

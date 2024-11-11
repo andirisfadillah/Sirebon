@@ -59,9 +59,9 @@
                 <form action="{{ route('ganti-password') }}" method="POST">
                     @csrf
                     @if (session('status'))
-                    <div class="alert alert-success">{{ session('status') }}</div>
+                        <div class="alert alert-success">{{ session('status') }}</div>
                     @elseif (session('error'))
-                    <div class="alert alert-danger">{{ session('error') }}</div>
+                        <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
 
                     <div class="form-group">
@@ -81,7 +81,7 @@
 
                     <button type="submit" class="btn btn-primary mt-3">Ganti Password</button>
                 </form>
-            </div>    
+            </div>
         </div>
     </div>
 </body>

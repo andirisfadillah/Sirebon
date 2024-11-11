@@ -23,7 +23,7 @@
             </div>
 
           
-                @csrf
+                
                 @method('put')
                 <label for="nama">Nama</label>
                 <input type="text" name="nama" value="{{$kapalku->nama}}">
