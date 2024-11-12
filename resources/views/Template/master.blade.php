@@ -4,7 +4,6 @@
 <head>
     @include('Template.head')
 </head>
-
 <body>
     <div class="wrapper">
         @include('Template.sidebar')
@@ -14,12 +13,9 @@
             <div class="content">
                 @yield('content')
             </div>
-
             @include('Template.footer')
         </div>
     </div>
-
     @include('Template.script')
 </body>
-
 </html>
