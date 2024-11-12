@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kapalku;
 use Illuminate\Http\Request;
 
 class KapalWajibController extends Controller
@@ -12,7 +13,8 @@ class KapalWajibController extends Controller
      */
     public function index()
     {
-        return view('Admin.kapal');
+        $kapalku = Kapalku::all();
+        return view('Admin.kapal', compact('kapalku'));
     }
 
     /**

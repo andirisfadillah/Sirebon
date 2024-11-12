@@ -22,7 +22,7 @@
                 ],
                 urls: ["assets/css/fonts.min.css"]
             },
-            active: function() {
+            active: function () {
                 sessionStorage.fonts = true;
             }
         });
@@ -132,19 +132,8 @@
         <!-- Sidebar -->
         <div class="sidebar">
             @include('Template.sidebar')
-            @include('Template.navbar')
         </div>
 
-<<<<<<< HEAD
-        @include('Template.navbar')
-        <!-- End Navbar -->
-        <div class="table-container">
-            <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-primary btn-add">Tambah Data</button>
-                <div class="input-group" style="width: 200px;">
-                    <span class="input-group-text">Search:</span>
-                    <input type="text" class="form-control" placeholder="Search">
-=======
         <!-- Main Content Area -->
         <div class="main-panel">
             <!-- Navbar -->
@@ -169,58 +158,8 @@
             <div class="container mt-4">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <a href="http://127.0.0.1:8000/rekening/create" class="btn btn-primary">Tambah Data</a>
->>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
                 </div>
-            </div>
 
-<<<<<<< HEAD
-            <table class="table table-bordered mt-3">
-                <thead class="table-light">
-                    <tr>
-                        <th style="width: 50px;">No.</th>
-                        <th>Nama Bank</th>
-                        <th>Nama Pemilik</th>
-                        <th>Nomor Rekening</th>
-                        <th style="width: 150px;">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($rekening as $index => $data)
-                    <tr>
-                        <td scope="col" class="text-center">{{ $index + 1 }}</td>
-                        <td scope="col" class="text-center">{{ $data->refBank->nama_bank }}</td>
-                        <td scope="col" class="text-center">{{ $data->nama_akun }}</td>
-                        <td scope="col" class="text-center">{{ $data->no_rekening }}</td>
-                        <td scope="col" class="text-center">
-                            <a href="{{ route('rekening.edit', $data->id) }}" class="btn btn-primary btn-sm m-1">Ubah</a>
-        
-                            <form id="deleteForm{{ $data->id }}" action="{{ route('rekening.destroy', $data->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-
-        <div class="ms-md-auto py-2 py-md-0">
-            <a href="{{ route('rekening.create') }}" class="btn btn-primary btn-round">Tambah Data</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-icon">
-                            <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </div>
-=======
                 <table class="table table-bordered">
                     <thead class="table-light">
                         <tr>
@@ -244,6 +183,5 @@
         <i class="fas fa-angle-up"></i>
     </a>
 </body>
->>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
 
 </html>

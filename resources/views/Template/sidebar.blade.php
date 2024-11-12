@@ -1,12 +1,12 @@
+<!-- sidebar -->
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
-                <img src="{{ asset('assets/img/examples/sirebon.png') }}" alt="SiRebon logo" class="navbar-brand mt-3" width="180" />
+            <a href="#" class="logo">
+                <img src="{{ asset('assets/img/examples/sirebon.png') }}" alt="SiRebon logo" class="navbar-brand mt-3"
+                    width="180" />
             </a>
-
-            <!-- Sidebar Toggle Buttons -->
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
                     <i class="gg-menu-right"></i>
@@ -15,19 +15,15 @@
                     <i class="gg-menu-left"></i>
                 </button>
             </div>
-
-            <!-- Topbar Toggler for More Options -->
             <button class="topbar-toggler more">
                 <i class="gg-more-vertical-alt"></i>
             </button>
         </div>
         <!-- End Logo Header -->
     </div>
-
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
-                <!-- Admin Navigation -->
                 @if (auth()->user()->level == 'admin')
                     <li class="nav-item active">
                         <a href="{{ route('home') }}">
@@ -78,9 +74,7 @@
                         </a>
                     </li>
                 @endif
-                {{-- End Admin Navigation --}}
 
-                <!-- Wajib User Navigation -->
                 @if (auth()->user()->level == 'wajib')
                     <li class="nav-item">
                         <a href="{{ route('profil.index') }}">
@@ -125,7 +119,6 @@
                         </a>
                     </li>
                 @endif
-                {{-- End Wajib User Navigation --}}
             </ul>
         </div>
     </div>
