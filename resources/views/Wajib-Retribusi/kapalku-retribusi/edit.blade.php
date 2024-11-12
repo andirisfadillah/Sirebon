@@ -24,9 +24,22 @@
 
           
                 
+<<<<<<< HEAD
                 @method('put')
+=======
+                <form action="{{ route('kapalku.store') }}" method="post">
+                    @csrf
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
                 <label for="nama">Nama</label>
-                <input type="text" name="nama" value="{{$kapalku->nama}}">
+                <input type="text" name="nama_lengkap" value="{{$kapalku->nama_lengkap}}">
+                <label for="nama">Telepon</label>
+                <input type="text" name="telepon" value="{{$kapalku->telepon}}">
+                <label for="nama">Nik</label>
+                <input type="text" name="nik" value="{{$kapalku->nik}}">
+                <label for="nama">Alamat</label>
+                <input type="text" name="alamat" value="{{$kapalku->alamat}}">
+                <label for="nama">Kelurahan</label>
+                <input type="text" name="kelurahan" value="{{$kapalku->kelurahan}}">
                 <button type="submit">Simpan data</button>
             </form>
         </div>

@@ -33,14 +33,24 @@ class RekeningController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+<<<<<<< HEAD
             'id_ref_bank' => 'required|exists:ref_bank,id',
             'nama_akun' => 'required|string|max:50',
             'no_rekening' => 'required|string|max:50',
+=======
+            'id_refBank' => 'required|exists:ref_bank,id',
+            'nama_akun' => 'required|string:max:50',
+            'no_rekening' => 'required|string:max:50',
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
         ]);
 
         MsRekening::create($request->all());
 
+<<<<<<< HEAD
         return redirect()->route('rekening.index')->with('success', 'Data rekening berhasil ditambahkan.');
+=======
+        return redirect()->route('rekening.index')->with('succes', 'Data rekening berhasil ditambahkan.');
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
     }
 
     /**
@@ -56,6 +66,7 @@ class RekeningController extends Controller
      */
     public function edit(string $id)
     {
+<<<<<<< HEAD
         // Temukan data rekening berdasarkan ID
         $data = MsRekening::findOrFail($id);
 
@@ -65,6 +76,17 @@ class RekeningController extends Controller
         // Kirim data rekening yang ingin diedit dan daftar bank ke view
         return view('Admin.rekening.edit', compact('data', 'refBanks'));
 
+=======
+        // Temukan data rekening sesuai id
+        $data = MsRekening::findOrFail($id);
+
+        // Ambil daftar bank dari tabel ref_bank untuk dropdown (jika di perlukan)
+        $refBanks = RefBank::all();
+
+        // kirim data rekening yang ingin diedit dan daftar bank ke view
+
+        return view('Admin.rekening.edit', compact('data', 'refBanks'));
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
     }
 
     /**
@@ -74,21 +96,36 @@ class RekeningController extends Controller
     {
         $data = MsRekening::findOrFail($id);
 
+<<<<<<< HEAD
         // Validasi input
         $request->validate([
             'id_ref_bank' => 'required|exists:ref_bank,id',
+=======
+        // validasi input
+        $request->validate([
+            'id_ref_bank' => 'required|exists:ref_bank_id',
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
             'nama_akun' => 'required|string|max:50',
             'no_rekening' => 'required|string|max:50',
         ]);
 
+<<<<<<< HEAD
         // Update data
+=======
+        // update data
+
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
         $data->update([
             'id_ref_bank' => $request->id_ref_bank,
             'nama_akun' => $request->nama_akun,
             'no_rekening' => $request->no_rekening,
         ]);
 
+<<<<<<< HEAD
         return redirect()->route('rekening.index')->with('success', 'Data rekening berhasil diperbarui.');
+=======
+        return redirect()->route('rekening.index')->with('succes', 'Data rekening berhasil di perbarui.');
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
     }
 
     /**
@@ -99,7 +136,11 @@ class RekeningController extends Controller
         $data = MsRekening::findOrFail($id);
         $data->delete();
 
+<<<<<<< HEAD
         return redirect()->route('rekening.index')->with('success', 'Data berhasil dihapus.');
 
+=======
+        return redirect()->route('rekening.index')->with('succes', 'Data berhasil dihapus.');
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
     }
 }

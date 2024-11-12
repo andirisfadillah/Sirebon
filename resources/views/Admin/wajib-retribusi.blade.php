@@ -40,6 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
                             
                             @foreach ($kapalku as $index => $data)
                             <tr>
@@ -66,6 +67,32 @@
                                     @endif
                                   </tr>
                                   @endforeach
+=======
+                            @foreach ($kapalku as $index => $item)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $item->nama_lengkap }}</td>
+                                <td>{{ $item->telepon }}</td>
+                                <td>{{ $item->nik }}</td>
+                                <td>{{ $item->alamat }}</td>
+                                <td>{{ $item->kelurahan }}</td>
+                                <td scope="col" class="text-center">
+                                    <a href="{{ route('kapalku.edit', $item->id) }}"
+                                        class="btn btn-primary btn-sm m-1">Ubah</a>
+
+                                    <form action="{{ route('kapalku.destroy', $item->id) }}"
+                                        method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm m-1"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                            
+                            <!-- Repeat rows as needed -->
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
                         </tbody>
                     </table>
                 </div>

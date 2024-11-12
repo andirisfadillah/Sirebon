@@ -52,9 +52,6 @@
             <div class="container">
                 <div class="page-inner">
                     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
-                        <div class="ms-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-primary btn-round">Tambah Data</a>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-md-3">
@@ -115,6 +112,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
     @endif
         @include('Template.footer')
         </div>
@@ -184,6 +182,28 @@
         </div>
         <!--   Core JS Files   -->
         @include('Template.script')
+=======
+                        <footer class="footer">
+                            <div class="container-fluid d-flex justify-content-between">
+                                <nav class="pull-left">
+                                    <ul class="nav">
+                                    </ul>
+                                </nav>
+                                <div class="copyright">
+                                    2024, Sirebon <i class="fa fa- heart text-danger"></i> Dinas Komunikasi Statistik informatika
+                                    <a href="http://www.themekita.com"></a> 
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+                        </footer>
+            </div>
+    </div>
+    </div>
+    @endif     
+      
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
 </body>
 
 </html>

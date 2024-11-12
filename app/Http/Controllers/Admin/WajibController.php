@@ -7,6 +7,7 @@ use App\Models\Kapalku;
 use Illuminate\Support\Facades\DB;
 use App\Models\WajibRetribusi;
 use Illuminate\Http\Request;
+use App\Models\Kapalku;
 
 class WajibController extends Controller
 {

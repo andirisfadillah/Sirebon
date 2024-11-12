@@ -12,7 +12,7 @@ class KonfirmasiPembayaranController extends Controller
      */
     public function index()
     {
-        return view('Wajib-Retribusi.konfirmasi');
+        return view('admin.pembayaran');
     }
 
     /**
