@@ -36,15 +36,21 @@
                             @csrf
                             <div class="form-outline mb-4">
                                 <div style="position: relative;" size="30">
-                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
-                                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Masukkan email" size="30" style="padding-left: 30px; height: 40px;" />
+                                    <i class="fa fa-user"
+                                        style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
+                                    <input type="email" name="email" class="form-control form-control-lg"
+                                        placeholder="Masukkan email" size="30"
+                                        style="padding-left: 30px; height: 40px;" />
                                 </div>
                             </div>
-                            
+
                             <div class="form-outline mb-4">
                                 <div style="position: relative;" size="30">
-                                    <i class="fa fa-lock" style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
-                                    <input type="password" name="password" class="form-control form-control-lg" placeholder="Masukkan password" size="30" style="padding-left: 30px; height: 40px;" />
+                                    <i class="fa fa-lock"
+                                        style="position: absolute; left: 10px; top: 10px; color: #888;"></i>
+                                    <input type="password" name="password" class="form-control form-control-lg"
+                                        placeholder="Masukkan password" size="30"
+                                        style="padding-left: 30px; height: 40px;" />
                                 </div>
                             </div>
                             <div class="form-group d-md-flex">
@@ -69,7 +75,7 @@
     </section>
     @if (session('error'))
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     title: 'Login Gagal!',
                     text: "{{ session('error') }}",
