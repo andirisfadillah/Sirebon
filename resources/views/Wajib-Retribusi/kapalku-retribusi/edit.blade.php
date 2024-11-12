@@ -24,12 +24,11 @@
 
           
                 
-<<<<<<< HEAD
+
                 @method('put')
-=======
                 <form action="{{ route('kapalku.store') }}" method="post">
                     @csrf
->>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
+
                 <label for="nama">Nama</label>
                 <input type="text" name="nama_lengkap" value="{{$kapalku->nama_lengkap}}">
                 <label for="nama">Telepon</label>
