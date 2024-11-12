@@ -74,6 +74,11 @@
         
                     <!-- Display success or error messages -->
                     @if (session('status'))
+<<<<<<< HEAD
+                        <div class="alert alert-success">{{ session('status') }}</div>
+                    @elseif (session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+=======
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
@@ -81,6 +86,7 @@
                         <div class="alert alert-danger">
                             {{ session('error') }}
                         </div>
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
                     @endif
         
                     <!-- Table Layout -->
@@ -111,5 +117,13 @@
                     </table>
                 </form>
             </div>
+<<<<<<< HEAD
+        </div>
+    </div>
+</body>
+
+</html>
+=======
         </body>
         </html>
+>>>>>>> a9b61bb87acca09106d68d902e3a7cbac7838827
