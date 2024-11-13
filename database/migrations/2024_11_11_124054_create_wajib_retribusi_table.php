@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Definisikan foreign key ke tabel users
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

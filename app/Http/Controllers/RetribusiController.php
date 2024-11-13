@@ -11,9 +11,14 @@ class RetribusiController extends Controller
 // RetribusiController.php
 public function index()
 {
-    // $retribusis = Retribusi::all();
-    // , compact('retribusis')
-    return view('admin.pembayaran');
+    $retribusis = Retribusi::all();
+    return view('admin.pembayaran.index', compact('retribusis'));
+}
+
+public function create()
+{
+    $retribusis = Retribusi::all();
+    return view('Admin.pembayaran.create');
 }
 
 public function store(Request $request)
