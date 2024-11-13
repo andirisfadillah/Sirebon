@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="d-flex justify-content-between mb-3">
-        {{-- {{route('pembayaran.create')}} --}}
-        <a href="#" class="btn btn-primary">Tambah Data</a>
+        <a href="{{ route('retribusi.create') }}" class="btn btn-primary">Tambah Data</a>
     </div>
+
     <table class="table table-bordered text-center">
         <thead>
             <tr>
@@ -19,6 +19,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Data here -->
         </tbody>
     </table>
 @endsection

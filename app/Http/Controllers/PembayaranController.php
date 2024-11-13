@@ -15,7 +15,11 @@ class PembayaranController extends Controller
     public function index()
 {
     $retribusis = Retribusi::all();
-    return view('admin.pembayaran', compact('retribusis'));
+    return view('admin.pembayaran.index', compact('retribusis'));
+}
+
+public function create(){
+    return view('Admin.pembayaran.create');
 }
  // PaymentController.php
 public function store(Request $request)

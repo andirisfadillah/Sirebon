@@ -26,7 +26,7 @@
                 @csrf
                 @method('put')
                 <label for="nama">Nama</label>
-                <input type="text" name="nama" value="{{$kategori->nama}}">
+                <input type="text" name="nama" value="{{ $kategori->nama }}">
                 <button type="submit">Simpan data</button>
             </form>
         </div>

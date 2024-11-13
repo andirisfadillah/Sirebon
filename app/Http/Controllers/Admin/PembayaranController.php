@@ -19,7 +19,9 @@ class PembayaranController extends Controller
      */
     public function create()
     {
-        
+        $retribusis = Retribusi::all();
+    return view('admin.pembayaran', compact('retribusis'));
+}
     }
 
     /**

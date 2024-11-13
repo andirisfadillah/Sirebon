@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:wajib']], routes: function () {
 });
 
 Route::get('/retribusi', action: [RetribusiController::class, 'index'])->name('retribusi.index');
+Route::get('/retribusi/create', action: [RetribusiController::class, 'create'])->name('retribusi.create');
 Route::post('/pembayaran', action: [pembayaranController::class, 'store'])->name('pembayaran.store');
 Route::get('/pembayaran/history', [pembayaranController::class, 'history'])->name('pembayaran.history')->middleware('auth');
 
