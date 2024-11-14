@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('Template.head')
+    {{-- @include('Template.head') --}}
 </head>
 
 <body>
@@ -29,6 +29,7 @@
                 @csrf
                 <label for="nama">Nama</label>
                 <input type="text" name="nama">
+                
                 <button type="submit">Simpan data</button>
             </form>
         </div>
@@ -41,7 +42,7 @@
 
 
     <!--   Core JS Files   -->
-    @include('Template.script')
+    {{-- @include('Template.script') --}}
 
 </body>
 

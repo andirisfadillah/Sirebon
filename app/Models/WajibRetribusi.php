@@ -10,13 +10,11 @@ class WajibRetribusi extends Model
     use HasFactory;
 
     protected $table = 'wajib_retribusi';
+    protected $fillable = ['nik', 'nama', 'no_hp', 'alamat', 'id_user'];
 
-    protected $fillable = [
-        'id_user',
-        'nama_lengkap',
-        'telepon',
-        'nik',
-        'alamat',
-        'kelurahan',
-    ];
+     // Relasi ke model User
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

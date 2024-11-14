@@ -27,16 +27,17 @@ class RekeningController extends Controller
         return view('Admin.rekening.create', compact('refBanks'));
     }
 
+    public function halamanTambah()
+    {
+        $refBanks = RefBank::all();
+        return view('Admin.rekening.create', compact('refBanks'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'id_refBank' => 'required|exists:ref_bank,id',
-            'nama_akun' => 'required|string:max:50',
-            'no_rekening' => 'required|string:max:50',
-        ]);
 
         MsRekening::create($request->all());
 
@@ -72,22 +73,15 @@ class RekeningController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = MsRekening::findOrFail($id);
-
-        // validasi input
         $request->validate([
-            'id_ref_bank' => 'required|exists:ref_bank_id',
+            'id_ref_bank' => 'required|exists:ref_bank,id',
             'nama_akun' => 'required|string|max:50',
             'no_rekening' => 'required|string|max:50',
         ]);
 
-        // update data
+        $rekening = MsRekening::findOrFail($id);
 
-        $data->update([
-            'id_ref_bank' => $request->id_ref_bank,
-            'nama_akun' => $request->nama_akun,
-            'no_rekening' => $request->no_rekening,
-        ]);
+        $rekening->update($request->all());
 
         return redirect()->route('rekening.index')->with('succes', 'Data rekening berhasil di perbarui.');
     }

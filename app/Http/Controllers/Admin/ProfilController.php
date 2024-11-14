@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\WajibRetribusi;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfilController extends Controller
 {
@@ -14,7 +16,42 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        return view('Wajib-Retribusi.profil');
+        // ambil data wajib retribusi berdasarkan user yang login
+        $wajibRetribusi = WajibRetribusi::where('id_user', auth()->user()->id)->get();
+       return view('Wajib-Retribusi.profil', compact('wajibRetribusi'));
+
+    }
+
+    public function update(Request $request) {
+        // validasi input dari form
+        $request->validate([
+            'username' => 'required|string|max:255',
+            'nik' => 'required|string|max:16',
+            'namaLengkap' => 'required|string|max:255',
+            'telepon' => 'required|string|max:16',
+            'alamat' => 'required|string|max:255',
+        ]);
+
+        $user = Auth::user();
+        
+        // update username di tabel users
+        $user->username = $request->input('username');
+        $user->save();  // simpan perubahan ke tabel users
+    
+        // ambil data wajib_retribusi yang terhubung dengan user
+        $wajibRetribusi = $user->wajibRetribusi; // misalnya ada relasi di model User
+    
+        // update data wajib_retribusi jika ada
+        foreach ($wajibRetribusi as $wajib) {
+            $wajib->nik = $request->input('nik');
+            $wajib->nama = $request->input('namaLengkap');
+            $wajib->no_hp = $request->input('telepon');
+            $wajib->alamat = $request->input('alamat');
+            $wajib->save(); // simpan perubahan ke tabel wajib_retribusi
+        }
+    
+        // redirect kembali dengan pesan sukses
+        return redirect()->route('profil.index')->with('success', 'Profil berhasil diperbarui!');
     }
 
     /**
@@ -68,10 +105,7 @@ class ProfilController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.

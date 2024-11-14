@@ -1,24 +1,22 @@
 @extends('Template.master')
 
 @section('content')
-    <table class="table table-dark table-bordered mt-3">
-        <div class="table-container">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th style="width: 50px;">No.</th>
-                        <th scope="col">Kategori Retribusi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Sample Data Row -->
-                    <tr>
-                        <thead class="thead-dark">
-                            <th scope="col">1</th>
-                            <th scope="col">Kategori Retribusi</th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <table class="table table-bordered mt-4">
+        <thead class="table-light">
+            <tr>
+                <th style="width: 50px;">No.</th>
+                <th>kategori retribusi</th>
+                <th style="width: 150px;">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($kategori as $item)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->nama }}</td>
+                </tr>
+            @endforeach
+            <!-- Repeat rows as needed -->
+        </tbody>
     </table>
 @endsection

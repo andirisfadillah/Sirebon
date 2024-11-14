@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    @include('Template.head')
+    {{-- @include('Template.head') --}}
 </head>
 
 <body>

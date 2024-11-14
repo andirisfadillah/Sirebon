@@ -16,6 +16,7 @@
                 <th>Tanggal Tindak Lanjut</th>
                 <th>Tindak Lanjut User</th>
                 <th>Aksi</th>
+
             </tr>
         </thead>
         <tbody>

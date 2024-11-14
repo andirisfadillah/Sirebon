@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('kategori-retribusi.index') }}">
+                        <a href="{{ route('kategori.index') }}">
                             <i class="fas fa-exclamation"></i>
                             <p>Kategori Retribusi</p>
                         </a>

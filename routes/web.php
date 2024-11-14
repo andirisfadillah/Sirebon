@@ -40,6 +40,7 @@ route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'ceklevel:admin,wajib']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('rekening', RekeningController::class);
+    Route::get('tambah-rekening', [RekeningController::class, 'halamanTambah'])->name('tambah-rekening');
     Route::resource('kategori-retribusi', KategoriController::class);
     Route::resource('wajib-retribusi', WajibController::class);
     Route::resource('kapal', KapalWajibController::class);

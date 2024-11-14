@@ -33,22 +33,27 @@
                         <td>{{ $item->nik }}</td>
                         <td>{{ $item->alamat }}</td>
                         <td>{{ $item->kelurahan }}</td>
-                        <td scope="col" class="text-center">
-                            <a href="{{ route('kapalku.edit', $item->id) }}" class="btn btn-primary btn-sm m-1">Ubah</a>
+                        @if (auth()->user()->level == 'admin')
+                            <td scope="col" class="text-center">
+                                <a href="{{ route('kapalku.edit', $item->id) }}" class="btn btn-primary btn-sm m-1">Ubah</a>
 
-                            <form action="{{ route('kapalku.destroy', $item->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm m-1"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
-                            </form>
-                        </td>
+                                <form action="{{ route('kapalku.destroy', $item->id) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm m-1"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                </form>
+                            </td>
+                        @endif
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+    @if (auth()->user()->level == 'admin')
     <div class="ms-md-auto py-2 py-md-0">
         <a href="{{ route('kapalku.create') }}" class="btn btn-primary btn-round">Tambah Data</a>
     </div>
+    @endif
 @endsection

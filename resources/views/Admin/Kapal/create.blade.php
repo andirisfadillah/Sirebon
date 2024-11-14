@@ -27,20 +27,19 @@
                     <table class="table table-bordered mt-3">
                         <thead class="table-light">
                             <tr>
-                                <form action="{{ route('kapalku.store') }}" method="post">
+                                <form action="{{ route('kapal.store') }}" method="post">
                                     @csrf
-                                    <label for="nama">Nama lengkap</label>
-                                    <input type="text" name="nama_lengkap">
-                                    <label for="nama">Telepon</label>
-                                    <input type="text" name="telepon">
-                                    <label for="nama">Nik</label>
-                                    <input type="text" name="nik">
-                                    <label for="nama">Alamat</label>
-                                    <input type="text" name="alamat">
-                                    <label for="nama">Kelurahan</label>
-                                    <input type="text" name="kelurahan">
-                                    <button type="submit">Simpan data</button>
+                                    <label for="nama_pemilik">Nama Pemilik</label>
+                                    <input type="text" name="nama_pemilik" required>
+                                    <label for="nama_kapal">Nama Kapal</label>
+                                    <input type="text" name="nama_kapal" required>
+                                    <label for="jenis_kapal">Jenis Kapal</label>
+                                    <input type="text" name="jenis_kapal" required>
+                                    <label for="ukuran">Ukuran</label>
+                                    <input type="text" name="ukuran" required>
+                                    <button type="submit">Simpan</button>
                                 </form>
+                                
                     </table>
                 </div>
 </html>
